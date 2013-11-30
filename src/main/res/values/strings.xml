@@ -12,6 +12,7 @@
     <string name="user_name">user name</string>
     <string name="follow_button">Follow</string>
     <string name="user_intro">I am lazy,nothing left here</string>
+    <string name="unfollow">Unfollow</string>
 
     <string-array name="search_array">
         <item>jyu</item>
