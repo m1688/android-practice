@@ -1,9 +1,29 @@
 <resources>
-    <string name="app_name">android-practice</string>
-    <string name="title_activity_search">Search user</string>
+    <string name="app_name">Android demo</string>
+    <string name="title_activity_search">Search User</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="search_button">Search</string>
+    <string name="searchbox_tip">input keyword</string>
+
+    <string-array name="search_array">
+        <item>jyu</item>
+        <item>hello</item>
+        <item>world</item>
+        <item>james</item>
+        <item>kitty</item>
+    </string-array>
+
+
+    <string-array name="mockedUsers">
+        <item>jyu</item>
+        <item>hello</item>
+        <item>world</item>
+        <item>james</item>
+        <item>kitty</item>
+    </string-array>
 
 </resources>

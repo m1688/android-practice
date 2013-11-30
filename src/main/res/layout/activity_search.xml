@@ -4,4 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="77dp"
+        android:layout_gravity="left|top">
+
+        <AutoCompleteTextView
+            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:text="@string/searchbox_tip"
+            android:id="@+id/search_keyword"
+            android:imeActionLabel="@string/search"
+            android:clickable="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_button"
+            android:textStyle="bold"
+            android:onClick="searchUsers" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="left|top">
+
+        <ListView
+            android:id="@+id/userListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+</FrameLayout>
