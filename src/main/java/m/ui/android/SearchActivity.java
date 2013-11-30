@@ -19,10 +19,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import m.domain.user.User;
+import m.domain.user.UserRepository;
+import m.infrastructure.impl.DefaultUserRepository;
+import m.ui.android.adapter.UserListAdapter;
+
 public class SearchActivity extends Activity {
     private boolean isSearchInputBoxCleared = false;
+    private UserRepository userRepository = new DefaultUserRepository();
 
-    private List<String> data = new ArrayList<String>();
+    private List<User> data = new ArrayList<User>();
+
+    private ListView userListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +75,8 @@ public class SearchActivity extends Activity {
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, searchArray);
         searchBoxAutoComplete.setAdapter(adapter);
 
-        final ListView userListView = (ListView) findViewById(R.id.userListView);
-        data.add("james");
-        data.add("john");
-        userListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, data));
-
+        userListView = (ListView)findViewById(R.id.userListView);
+       // userListView.setAdapter(new UserListAdapter(this, android.R.layout.simple_list_item_2, data));
     }
 
 
@@ -101,7 +106,10 @@ public class SearchActivity extends Activity {
     }
 
     public void searchUsers(View view) {
+        EditText editText = (EditText)findViewById(R.id.search_keyword);
+        List<User> searchedUser = userRepository.fuzzySearchByUserName(editText.getText().toString());
 
+        userListView.setAdapter(new UserListAdapter(this, android.R.layout.simple_list_item_2, searchedUser));
     }
 
     /**
