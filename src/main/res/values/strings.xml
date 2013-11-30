@@ -8,6 +8,10 @@
     <string name="search">Search</string>
     <string name="search_button">Search</string>
     <string name="searchbox_tip">input keyword</string>
+    <string name="user_icon">user\'s icon</string>
+    <string name="user_name">user name</string>
+    <string name="follow_button">Follow</string>
+    <string name="user_intro">I am lazy,nothing left here</string>
 
     <string-array name="search_array">
         <item>jyu</item>

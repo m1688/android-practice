@@ -2,7 +2,7 @@ package m.domain.user;
 
 /**
  * who sends message(a.k.a wei bo)
- *
+ * <p/>
  * Created by jyu on 11/23/13.
  */
 public class User {
@@ -10,6 +10,10 @@ public class User {
     private String name;
     private String nickName;
     private String email;
+
+    public User(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
