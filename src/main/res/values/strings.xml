@@ -2,6 +2,7 @@
     <string name="app_name">Android demo</string>
     <string name="title_activity_search">Search User</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_my_activity">My Timeline</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -13,6 +14,7 @@
     <string name="follow_button">Follow</string>
     <string name="user_intro">I am lazy,nothing left here</string>
     <string name="unfollow">Unfollow</string>
+    <string name="post_twitter">Post</string>
 
     <string-array name="search_array">
         <item>jyu</item>
@@ -30,5 +32,6 @@
         <item>james</item>
         <item>kitty</item>
     </string-array>
+    
 
 </resources>
