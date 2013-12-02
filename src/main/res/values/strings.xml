@@ -30,5 +30,60 @@
         <item>james</item>
         <item>kitty</item>
     </string-array>
+    
+    <!-- BEGIN：settings -->
+    <string name="title_settings">设置</string>
+    <string name="title_msgNotify">新消息提醒</string>
+    <string name="title_push">推送设置</string>
+    <string name="title_push_msg">推送通知</string>
+    <string name="title_receive_bell">声音</string>
+    <string name="title_ringtone">铃声</string>
+    <string name="title_receive_vibrate">震动</string>
+    <string name="title_remind">消息提醒</string>
+    <string name="title_at_remind">\@我提醒</string>
+    <string name="title_comment_remind">评论提醒</string>
+    <string name="title_private_msg_remind">私信提醒</string>
+    <string name="title_new_fans_remind">新粉丝提醒</string>
+    
+    <string name="title_msg_pull_frequency">获取新消息</string>
+    <string-array name="msg_pull_frequency_value">  
+        <item>0.5</item>  
+        <item>2</item>  
+        <item>5</item>  
+    </string-array>  
+    <string-array name="msg_pull_frequency">  
+        <item>每隔0.5分钟</item>  
+        <item>每2分钟</item>  
+        <item>每5分钟</item>  
+    </string-array>
+    
+    <string name="title_common">通用</string>
+    <string name="title_reading_mode">阅读模式</string>
+	<string-array name="reading_mode">
+	    <item>有图模式</item>
+	    <item>无图模式</item>
+	</string-array>
+	<string-array name="reading_mode_value">
+	    <item>true</item>
+	    <item>false</item>
+	</string-array> 
+	
+	<string name="title_font_size">字号设置</string>
+	<string-array name="font_size">
+	    <item>大</item>
+	    <item>中</item>
+	    <item>小</item>
+	</string-array>
+	<string-array name="font_size_value">
+	    <item>large</item>
+	    <item>medium</item>
+	    <item>small</item>
+	</string-array>
+	
+	<string name="title_load_more">自动加载更多</string>
+	<string name="summary_load_more">到达列表底部时自动加载更多微博</string>
+	
+    <string name="title_private">隐私</string>
+    <!-- END：settings -->
 
 </resources>
