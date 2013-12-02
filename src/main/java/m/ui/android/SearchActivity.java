@@ -32,7 +32,7 @@ public class SearchActivity extends Activity {
     private UserRepository userRepository = new DefaultUserRepository();
     private User currentUser = SampleData.currentUser;
 
-    private List<User> searchedUser;
+    private List<User> searchedUsers;
 
     private static final int pageSize = 10;
     private int pageNum = 1;
@@ -135,20 +135,37 @@ public class SearchActivity extends Activity {
 
     public void searchUsers(View view) {
         EditText editText = (EditText) findViewById(R.id.search_keyword);
-        searchedUser = userRepository.fuzzySearchByUserName(editText.getText().toString());
-        userListAdapter = new UserListAdapter(this, android.R.layout.simple_list_item_2, getCurrentPageOfUser());
-        userListView.setAdapter(userListAdapter);
+        List<User> searchedUserList = userRepository.fuzzySearchByUserName(editText.getText().toString());
+        setSearchedUsers(searchedUserList);
 
-        pageNum = 1;
-        lastUserIndex = 0;
+        TextView noSearchResult = (TextView) findViewById(R.id.no_user_search_result);
+        noSearchResult.setText("");
+        noSearchResult.setVisibility(View.INVISIBLE);
+        if (searchedUserList == null || searchedUserList.isEmpty()) {
+            noSearchResult.setVisibility(View.VISIBLE);
+            noSearchResult.setText(R.string.no_search_result);
+        }
+        userListAdapter = new UserListAdapter(this, android.R.layout.simple_list_item_2, loadOneMorePageUsers());
+        userListView.setAdapter(userListAdapter);
     }
 
-    public List<User> getCurrentPageOfUser() {
+    //TODO remove side effects
+    public List<User> loadOneMorePageUsers() {
         int from = (pageNum - 1) * pageSize;
         int to = from + pageSize;
-        to = to > searchedUser.size() ? searchedUser.size() : to;
+        to = to > searchedUsers.size() ? searchedUsers.size() : to;
         lastUserIndex = to;
-        return searchedUser.subList(0, to);
+        return searchedUsers.subList(0, to);
+    }
+
+    public List<User> getSearchedUsers() {
+        return searchedUsers;
+    }
+
+    public void setSearchedUsers(List<User> searchedUsers) {
+        this.searchedUsers = searchedUsers;
+        pageNum = 1;
+        lastUserIndex = 0;
     }
 
     /**
@@ -185,9 +202,9 @@ public class SearchActivity extends Activity {
                              int visibleItemCount, int totalItemCount) {
 
             boolean loadMore = firstVisibleItem + visibleItemCount >= totalItemCount;
-            if (searchedUser != null && lastUserIndex < searchedUser.size() && loadMore) {
+            if (searchedUsers != null && lastUserIndex < searchedUsers.size() && loadMore) {
                 pageNum++;
-                userListAdapter.setUserList(getCurrentPageOfUser());
+                userListAdapter.setUserList(loadOneMorePageUsers());
             }
 
         }

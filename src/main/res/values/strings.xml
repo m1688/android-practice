@@ -84,6 +84,7 @@
 	<string name="summary_load_more">到达列表底部时自动加载更多微博</string>
 	
     <string name="title_private">隐私</string>
+    <string name="no_search_result">No result, please try another try!</string>
     <!-- END：settings -->
 
 </resources>
