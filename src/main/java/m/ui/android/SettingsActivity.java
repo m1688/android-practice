@@ -74,11 +74,14 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         needUpdatePreferenceMap.put(KEY_MSG_PULL_FREQUENCY, new Summary("每隔", "分钟刷新一次"));
         needUpdatePreferenceMap.put(KEY_RINGTONE, new Summary("", ""){
             public String getSummary(String value) {
-                int lastSlashIndex = -1;
-                if(value != null && (lastSlashIndex = value.lastIndexOf("/")) != -1) {
+                if(value == null || value.trim().length() == 0) {
+                    return "";
+                }
+                int lastSlashIndex = value.lastIndexOf("/");
+                if(lastSlashIndex  != -1) {
                     return value.substring(lastSlashIndex + 1);
                 }
-                return "";
+                return value;
             }
         });
         needUpdatePreferenceMap.put(KEY_READING_MODE, new Summary("", "") {
