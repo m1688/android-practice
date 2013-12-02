@@ -6,104 +6,45 @@ import java.util.Map;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-
+import static m.constant.SettingsKey.KEY_MSG_PULL_FREQUENCY;
+import static m.constant.SettingsKey.KEY_RINGTONE;
+import static m.constant.SettingsKey.KEY_READING_MODE;
+import static m.constant.SettingsKey.KEY_FONT_SIZE;
 /**
  * 设置界面
  * 
  * @author ticmy
  */
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
-    /**
-     * 是否推送消息
-     */
-    public static final String KEY_RECEIVE_PUSH_MSG = "key_push_msg";
-    /**
-     * 是否响铃
-     */
-    public static final String KEY_RECEIVE_BELL = "key_receive_bell";
-    /**
-     * 铃声
-     */
-    public static final String KEY_RINGTONE = "key_ringtone";
-    /**
-     * 是否震动
-     */
-    public static final String KEY_RECEIVE_VIBRATE = "key_receive_vibrate";
-    /**
-     * @我提醒
-     */
-    public static final String KEY_AT_REMIND = "key_at_remind";
-    /**
-     * 评论提醒
-     */
-    public static final String KEY_COMMENT_REMIND = "key_comment_remind";
-    /**
-     * 私信提醒
-     */
-    public static final String KEY_PRIVATE_MSG_REMIND = "key_private_msg_remind";
-    /**
-     * 新关注提醒
-     */
-    public static final String KEY_NEW_FANS_REMIND = "key_new_fans_remind";
-    /**
-     * 消息获取频率
-     */
-    public static final String KEY_MSG_PULL_FREQUENCY = "key_msg_pull_frequency";
-    /**
-     * 阅读模式：有图、无图
-     */
-    public static final String KEY_READING_MODE = "key_reading_mode";
-    /**
-     * 字号
-     */
-    public static final String KEY_FONT_SIZE = "key_font_size";
-    /**
-     * 是否自动加载更多
-     */
-    public static final String KEY_LOAD_MORE = "key_load_more";
-    
+
     /**
      * 更改配置后需要更新summary显示的那些preference
      */
-    private Map<String, Summary> needUpdatePreferenceMap = new HashMap<String, SettingsActivity.Summary>();
-    
+    private Map<String, Handler> needUpdatePreferenceMap = new HashMap<String, Handler>();
+
     {
-        needUpdatePreferenceMap.put(KEY_MSG_PULL_FREQUENCY, new Summary("每隔", "分钟刷新一次"));
-        needUpdatePreferenceMap.put(KEY_RINGTONE, new Summary("", ""){
-            public String getSummary(String value) {
-                if(value == null || value.trim().length() == 0) {
+        needUpdatePreferenceMap.put(KEY_MSG_PULL_FREQUENCY, null);
+        needUpdatePreferenceMap.put(KEY_RINGTONE, new Handler() {
+
+            public String handle(String value) {
+                if (value == null || value.trim().length() == 0) {
                     return "";
                 }
                 int lastSlashIndex = value.lastIndexOf("/");
-                if(lastSlashIndex  != -1) {
+                if (lastSlashIndex != -1) {
                     return value.substring(lastSlashIndex + 1);
                 }
                 return value;
             }
         });
-        needUpdatePreferenceMap.put(KEY_READING_MODE, new Summary("", "") {
-            public String getSummary(String value) {
-                if("true".equalsIgnoreCase(value)) {
-                    return "有图模式";
-                }
-                return "无图模式";
-            }
-        });
-        needUpdatePreferenceMap.put(KEY_FONT_SIZE, new Summary("", "") {
-            public String getSummary(String value) {
-                if("small".equalsIgnoreCase(value)) {
-                    return "小";
-                } else if("large".equalsIgnoreCase(value)) {
-                    return "大";
-                } else {
-                    return "中";
-                }
-            }
-        });
+        needUpdatePreferenceMap.put(KEY_READING_MODE, null);
+        needUpdatePreferenceMap.put(KEY_FONT_SIZE, null);
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -115,7 +56,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         super.onResume();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-        for(String key : needUpdatePreferenceMap.keySet()) {
+        for (String key : needUpdatePreferenceMap.keySet()) {
             setSummary(sharedPreferences, key);
         }
     }
@@ -128,38 +69,47 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        Summary summary = needUpdatePreferenceMap.get(key);
-        if (summary != null) {
+        if (needUpdatePreferenceMap.containsKey(key)) {
             setSummary(sharedPreferences, key);
         }
     }
 
     private void setSummary(SharedPreferences sharedPreferences, String key) {
         Preference preference = findPreference(key);
-        String value = sharedPreferences.getString(key, null);
-        Summary summary = needUpdatePreferenceMap.get(key);
-        if(preference == null || value == null || summary == null) {
+        if (preference == null) {
             return;
         }
-        preference.setSummary(summary.getSummary(value));
-    }
-    
-    private static class Summary {
-        private String prefix;
-        private String suffix;
-        
-        public Summary(String prefix, String suffix){
-            this.prefix = prefix;
-            this.suffix = suffix;
+        String value = sharedPreferences.getString(key, null);
+        Handler tip = needUpdatePreferenceMap.get(key);
+        if (tip == null) {
+            if (preference instanceof ListPreference) {
+                value = ((ListPreference) preference).getEntry().toString();
+            }
+        } else {
+            if (value == null) {
+                value = "";
+            } else {
+                value = tip.handle(value);
+            }
         }
-        
+        preference.setSummary(value);
+    }
+
+    /**
+     * 字符串处理器，默认什么也不做
+     * 
+     * @author ticmy
+     */
+    private static class Handler {
+
         /**
-         * 默认是 prefix + value + suffix
+         * 默认返回传入的参数value
+         * 
          * @param value
          * @return
          */
-        public String getSummary(String value) {
-            return prefix + value + suffix;
+        public String handle(String value) {
+            return value;
         }
     }
 }
