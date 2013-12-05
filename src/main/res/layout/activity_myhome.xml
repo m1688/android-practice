@@ -1,0 +1,29 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:dslv="http://schemas.android.com/apk/res/m.ui.android"
+    android:id="@+id/myhome_container"
+    tools:context=".MyHomeActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+   <com.mobeta.android.dslv.DragSortListView
+        android:id="@+id/my_timeline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        dslv:drag_enabled="true"
+	    dslv:collapsed_height="2dp"
+	    dslv:drag_scroll_start="0.33"
+	    dslv:max_drag_scroll_speed="0.5"
+	    dslv:float_alpha="0.6"
+	    dslv:slide_shuffle_speed="0.3"
+	    dslv:track_drag_sort="false"
+	    dslv:use_default_controller="true"
+	    dslv:drag_handle_id="@+id/aa"
+	    dslv:sort_enabled="false"
+	    dslv:remove_enabled="true"
+	    dslv:drag_start_mode="onLongPress"
+	    dslv:remove_mode="flingRemove"  />
+
+</LinearLayout>
