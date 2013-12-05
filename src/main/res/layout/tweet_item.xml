@@ -32,7 +32,7 @@
         android:layout_below="@+id/twitter_username"
         android:text="Twitter..." />
 
-    <Button
+    <!--  <Button
         android:id="@+id/del_tweet"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -44,6 +44,6 @@
         android:paddingRight="8dip"
         android:singleLine="true"
         android:text="删除"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff" />-->
 
 </RelativeLayout>
