@@ -3,6 +3,7 @@
     <string name="title_activity_search">Search User</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_my_activity">My Timeline</string>
+    <string name="title_post">Post New</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
