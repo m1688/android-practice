@@ -1,5 +1,10 @@
 package m.ui.android;
 
+/*
+ * 个人微博首页
+ * 需要依赖框架  https://github.com/bauerca/drag-sort-listview
+ * @author chunterg
+ */
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.ListActivity;

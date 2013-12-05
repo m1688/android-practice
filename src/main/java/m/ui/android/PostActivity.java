@@ -1,55 +1,28 @@
 package m.ui.android;
 
 import android.app.ActionBar;
+
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.GestureDetector.OnGestureListener;
-import android.view.GestureDetector.SimpleOnGestureListener;
-import android.view.Window;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AbsListView;
-import android.widget.AnalogClock;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
+
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.security.auth.PrivateCredentialPermission;
 
-import com.mobeta.android.dslv.DragSortListView;
-import com.mobeta.android.dslv.DragSortController;
-
-import m.domain.tweet.Tweet;
-import m.domain.user.User;
-import m.domain.user.UserRepository;
-import m.infrastructure.SampleData;
-import m.infrastructure.impl.DefaultUserRepository;
-import m.ui.android.adapter.TweetListAdapter;
-import m.ui.android.adapter.UserListAdapter;
-
+/*
+ * ∑¢ÀÕŒ¢≤©ΩÁ√Ê
+ * @author chunterg
+ */
 public class PostActivity extends Activity {
-
-
 
     private EditText postContentEditText = null;
     @Override
@@ -87,17 +60,12 @@ public class PostActivity extends Activity {
 	}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.post, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case android.R.id.home:
             	Intent i = new Intent(this, MyHomeActivity.class);  
