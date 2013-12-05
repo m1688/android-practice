@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PersonalWeiboActivity" >
+    
+    <item android:id="@+id/weibo_delete"
+        android:title="@string/weibo_delete"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>
