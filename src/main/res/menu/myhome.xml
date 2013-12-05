@@ -3,7 +3,7 @@
     tools:context=".SearchActivity" >
     
     <item android:id="@+id/post_twitter"
-        android:title="@string/post_twitter"
+        android:title="post"
         android:orderInCategory="100"
         android:showAsAction="always" />
     
