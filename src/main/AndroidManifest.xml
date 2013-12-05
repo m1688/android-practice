@@ -16,7 +16,7 @@
         </activity>
 
         <activity android:name=".PersonalWeiboActivity"
-            android:label="@string/title_my_weibos"
+            android:label="@string/my_weibo"
             >
              <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
