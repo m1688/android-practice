@@ -93,4 +93,10 @@
     <string name="no_search_result">No result, please try another try!</string>
     <!-- END：settings -->
 
+	<string name="follower_list">关注列表</string>
+    <string name="follower_img_desc">头像</string>
+    <string name="follower_button_focus">关注</string>
+    <string name="follower_button_cancel_focus">取消关注</string>
+    <string name="msg_focus">已关注</string>
+    <string name="msg_cancle_focus">已取消关注</string>
 </resources>

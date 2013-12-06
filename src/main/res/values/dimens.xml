@@ -3,4 +3,15 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="follower_img_width">40dp</dimen>
+    <dimen name="follower_img_margin">40dp</dimen>
+    <dimen name="follower_item_padding_left">12dp</dimen>
+    <dimen name="follower_item_padding_top">8dp</dimen>
+    <dimen name="follower_item_padding_bottom">8dp</dimen>
+    <dimen name="follower_item_padding_right">12dp</dimen>
+    <dimen name="follower_item_height">60dp</dimen>
+    <dimen name="follower_item_name_margin">5dp</dimen>
+    <dimen name="follower_item_button_width">70dp</dimen>
+    <dimen name="follower_item_button_text_size">10dp</dimen>
+    <dimen name="follower_item_remark_text_size">12dp</dimen>
     </resources>
