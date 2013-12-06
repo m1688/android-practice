@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">个人微博</string>
-    <string name="my_weibo">我的微博</string>
+   <string name="my_weibo">我的微博</string>
     <string name="weibo_send">发送</string>
     <string name="weibo_delete">删除</string>
     <string name="menu_context_title">操作</string>
     <string name="title_activity_search">Search User</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_my_activity">My Timeline</string>
+    <string name="title_post">Post New</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

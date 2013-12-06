@@ -3,36 +3,43 @@
     android:versionCode="1"
     android:versionName="1.0">
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19" />
 
     <application android:allowBackup="true"
         android:label="android-practice"
         android:icon="@drawable/ic_launcher"
         android:theme="@style/AppTheme">
-
+		 <activity android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            >
+            
+        </activity>
+        
         <activity android:name=".MainActivity"
             android:label="@string/title_activity_main"
             >
         </activity>
 
+
         <activity android:name=".PersonalWeiboActivity"
             android:label="@string/my_weibo"
             >
-             <intent-filter>
+            </activity>
+		
+         <activity android:name=".MyHomeActivity"
+            android:label="@string/title_my_activity"
+            >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity"
-            android:exported="true"
-            android:label="@string/title_activity_search"
+       
+		<activity android:name=".PostActivity"
+            android:label="@string/title_post"
             >
         </activity>
-		<activity android:name=".SettingsActivity"
-            android:exported="true"
-		    android:label="@string/title_settings">
-		</activity>
     </application>
 
 </manifest>
