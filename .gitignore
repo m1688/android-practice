@@ -5,3 +5,4 @@ gradlew.bat
 local.properties
 
 /src/main/bin
+/src/main/gen
