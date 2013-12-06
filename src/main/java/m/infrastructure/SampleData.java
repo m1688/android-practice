@@ -49,6 +49,7 @@ public class SampleData {
         for (int i = 0; i < times; i++) {
             final User user = new User(name + Integer.toString(i + 1));
             user.setName(name + user.getId());
+            user.setNickName(name + "nickname");
             users.add(user);
         }
     }
