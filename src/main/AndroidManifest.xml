@@ -1,38 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="m.ui.android"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
 
-    <application android:allowBackup="true"
-        android:label="android-practice"
+    <application
+        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            >
+        android:label="android-practice"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="m.ui.android.MainActivity"
+            android:label="@string/title_activity_main" >
         </activity>
-
-        <activity android:name=".PersonalWeiboActivity"
-            android:label="@string/title_my_weibos"
-            >
-             <intent-filter>
+        <activity
+            android:name="m.ui.android.PersonalWeiboActivity"
+            android:label="@string/title_my_weibos" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity"
+        <activity
+            android:name="m.ui.android.SearchActivity"
             android:exported="true"
-            android:label="@string/title_activity_search"
-            >
+            android:label="@string/title_activity_search" >
         </activity>
-		<activity android:name=".SettingsActivity"
+        <activity
+            android:name="m.ui.android.SettingsActivity"
             android:exported="true"
-		    android:label="@string/title_settings">
-		</activity>
+            android:label="@string/title_settings" >
+        </activity>
+        <activity
+            android:name="m.ui.android.MyProfileActivity"
+            android:label="@string/title_activity_my_profile" >
+
+        </activity>
+        
+
     </application>
 
 </manifest>
