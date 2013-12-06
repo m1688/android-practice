@@ -40,6 +40,10 @@
             android:label="@string/title_post"
             >
         </activity>
+        <activity android:name="m.ui.android.FollowerActivity"
+            android:label="@string/follower_list">
+            
+        </activity>
     </application>
 
 </manifest>
