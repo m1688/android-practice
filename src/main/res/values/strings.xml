@@ -2,10 +2,14 @@
 <resources>
 
     <string name="app_name">个人微博</string>
-    <string name="title_my_weibos">我的微博</string>
-    <string name="btn_send">发送</string>
+   <string name="my_weibo">我的微博</string>
+    <string name="weibo_send">发送</string>
+    <string name="weibo_delete">删除</string>
+    <string name="menu_context_title">操作</string>
     <string name="title_activity_search">Search User</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_my_activity">My Timeline</string>
+    <string name="title_post">Post New</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="search">Search</string>
@@ -89,9 +93,16 @@
     <string name="no_search_result">No result, please try another try!</string>
     <!-- END：settings -->
 
+
     <string name="title_activity_my_profile">MyProfileActivity</string>
     <string name="text_forward">转发</string>
     <string name="text_comment">评论</string>
     <string name="text_like">顶</string>
     <string name="title_activity_profile">ProfileActivity</string>
+	<string name="follower_list">关注列表</string>
+    <string name="follower_img_desc">头像</string>
+    <string name="follower_button_focus">关注</string>
+    <string name="follower_button_cancel_focus">取消关注</string>
+    <string name="msg_focus">已关注</string>
+    <string name="msg_cancle_focus">已取消关注</string>
 </resources>
