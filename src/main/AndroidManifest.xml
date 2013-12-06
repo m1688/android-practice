@@ -19,6 +19,12 @@
             android:label="@string/title_activity_main"
             >
         </activity>
+
+
+        <activity android:name=".PersonalWeiboActivity"
+            android:label="@string/my_weibo"
+            >
+            </activity>
 		
          <activity android:name=".MyHomeActivity"
             android:label="@string/title_my_activity"

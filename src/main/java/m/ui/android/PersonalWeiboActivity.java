@@ -12,12 +12,19 @@ import org.apache.http.impl.cookie.DateUtils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AbsListView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * 
@@ -47,7 +54,7 @@ public class PersonalWeiboActivity extends Activity implements OnClickListener {
 		listView = (ListView) findViewById(R.id.weiboList);
 		listView.setAdapter(listAdapter);
 		listView.setOnScrollListener(new LoadMoreListener(this));
-
+		registerForContextMenu(listView);
 	}
 
 	@Override
@@ -63,6 +70,33 @@ public class PersonalWeiboActivity extends Activity implements OnClickListener {
 		map.put("img", R.drawable.ic_launcher);
 		weiboList.addFirst(map);
 		listAdapter.refresh(weiboList);
+	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		menu.setHeaderTitle(getString(R.string.menu_context_title));
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.list, menu);
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
+				.getMenuInfo();
+		int pos = info.position;
+		Log.i("listView", String.valueOf(pos));
+		switch (item.getItemId()) {
+		case R.id.weibo_delete:
+			listAdapter.getData().remove(pos);
+			listAdapter.refresh(listAdapter.getData());
+			Toast.makeText(this.getBaseContext(), "É¾³ýÎ¢²©³É¹¦", Toast.LENGTH_SHORT)
+					.show();
+			return true;
+		default:
+			return super.onContextItemSelected(item);
+		}
 	}
 
 	public class LoadMoreListener implements AbsListView.OnScrollListener {
