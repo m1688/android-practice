@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/detail_activity_vertical_margin"
+    android:paddingLeft="@dimen/detail_activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#E1E0DE"
+    tools:context=".DetailActivity" >
+
+        
+    <!-- 微博正文 -->
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@layout/corners_bg"
+        android:paddingBottom="4dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="4dp">
+           
+           <LinearLayout
+	        android:id="@+id/head_layout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+	        <ImageButton 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/alibaba"
+	            android:contentDescription="@string/user_img"/>
+	        
+	        <LinearLayout
+		        android:id="@+id/title_layout"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical">
+		        <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/detail_user_name" />
+		        <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/publish_time" />
+	        </LinearLayout>
+        </LinearLayout>
+        
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/content" />
+    </LinearLayout>
+       
+    <!-- 评论内容 -->
+    <LinearLayout
+        android:id="@+id/comment_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@layout/corners_bg">
+	    
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/comment_title"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+		    android:paddingRight="4dp"
+		    android:paddingTop="4dp">
+            
+        </TextView>
+        <ListView
+            android:id="@+id/comment_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+        
+        <LinearLayout
+	        android:id="@+id/operation_layout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_marginTop="@dimen/activity_vertical_margin">
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

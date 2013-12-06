@@ -88,5 +88,16 @@
     <string name="title_private">隐私</string>
     <string name="no_search_result">No result, please try another try!</string>
     <!-- END：settings -->
-
+    
+    <!-- detail start -->
+    <string name="detail_activity">详细页面</string>
+    <string name="main_activity">主界面</string>
+    <string name="detail_activity_title">微博正文</string>
+    <string name="user_img">用户头像</string>
+    <string name="detail_user_name">Alibaba</string>
+    <string name="publish_time">12-12 02:03</string>
+    <string name="content">新华网北京12月3日电 中共中央政治局12月3日召开会议，分析研究2014年经济工作，听取第二次全国土地调查情况汇报。中共中央总书记习近平主持会议。会议认为，今年以来，国内外形势错综复杂，我国经济发展面临近年来少有的复杂严峻局面。党中央、国务院带领全国各族人民深入贯彻落实党的十八大精神，坚持稳中求进工作总基调，坚持统筹稳增长、调结构、促改革，坚持宏观政策要稳、微观政策要活、社会政策要托底有机统一，保持政策定力，创新调控思路和方式，深处着力、精准发力，推出一系列创新性政策措施，经济社会发展稳中有进、稳中向好，全年主要预期目标能够较好完成，实现了良好开局。</string>
+    <string name="comment_user_img">评论用户的头像</string>
+    <string name="comment_title">评论</string>
+    <!-- detail end -->
 </resources>
