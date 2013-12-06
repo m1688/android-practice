@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity" >
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" 
+	    android:orientation="vertical"
+	    >
+	    <FrameLayout
+	        android:id="@+id/header"
+	        android:layout_width="fill_parent"
+	        android:layout_height="110dp" >
+	        	<ImageView
+				    android:id="@+id/header_background"
+				    android:layout_width="fill_parent"
+				    android:layout_height="100dp"
+				    android:background="@drawable/pc2"  
+				    />
+
+	    </FrameLayout>
+    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" 
+	        android:orientation="horizontal"
+	        android:padding="10dp"
+	        >
+	        	
+	        	<Button
+				    android:id="@+id/detail"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:text="详细资料" 
+				    style="@style/buttonLink"
+				    />
+	        	<View android:layout_height="fill_parent"
+	        	    android:layout_width="1px"
+	        	    android:background="@android:color/black"
+	        	    />
+	        	<Button
+				    android:id="@+id/weibo"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textSize="14dp"
+				    style="@style/buttonLink"
+				    android:text="25\n微博" />
+	        	<View android:layout_height="fill_parent"
+	        	    android:layout_width="1px"
+	        	    android:background="@android:color/black"
+	        	    />
+	        	<Button
+				    android:id="@+id/favorite"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textSize="14dp"
+				    style="@style/buttonLink"
+				    android:text="110\n关注" />
+	        	<View android:layout_height="fill_parent"
+	        	    android:layout_width="1px"
+	        	    android:background="@android:color/black"
+	        	    />
+	        	<Button
+				    android:id="@+id/supporter"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textSize="14dp"
+				    style="@style/buttonLink"
+				    android:text="1000\n粉丝" />
+	        	
+	    </LinearLayout>
+    </LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" 
+	    android:orientation="vertical"
+	    >
+	        <ListView
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+	    
+	</LinearLayout>
+
+
+</LinearLayout>
