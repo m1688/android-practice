@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="m.ui.android"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <application
@@ -14,12 +13,20 @@
         android:label="android-practice"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="m.ui.android.MainActivity"
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="m.ui.android.PersonalWeiboActivity"
-            android:label="@string/title_my_weibos" >
+            android:name=".PersonalWeiboActivity"
+            android:label="@string/my_weibo" >
+        </activity>
+        <activity
+            android:name=".MyHomeActivity"
+            android:label="@string/title_my_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,22 +34,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="m.ui.android.SearchActivity"
-            android:exported="true"
-            android:label="@string/title_activity_search" >
+            android:name=".PostActivity"
+            android:label="@string/title_post" >
         </activity>
         <activity
-            android:name="m.ui.android.SettingsActivity"
-            android:exported="true"
-            android:label="@string/title_settings" >
+            android:name="m.ui.android.FollowerActivity"
+            android:label="@string/follower_list" >
         </activity>
         <activity
             android:name="m.ui.android.MyProfileActivity"
             android:label="@string/title_activity_my_profile" >
-
         </activity>
-        
-
     </application>
 
 </manifest>
