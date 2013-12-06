@@ -1,0 +1,72 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/title_settings" >
+
+    <PreferenceScreen android:title="@string/title_msgNotify" >
+        <PreferenceCategory android:title="@string/title_push" >
+            <SwitchPreference
+                android:key="key_push_msg"
+                android:title="@string/title_push_msg" />
+            <SwitchPreference
+                android:key="key_receive_bell"
+                android:title="@string/title_receive_bell" />
+
+            <RingtonePreference
+                android:key="key_ringtone"
+                android:ringtoneType="all"
+                android:showSilent="false"
+                android:title="@string/title_ringtone" />
+
+            <SwitchPreference
+                android:key="key_receive_vibrate"
+                android:title="@string/title_receive_vibrate" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/title_remind" >
+            <SwitchPreference
+                android:key="key_at_remind"
+                android:title="@string/title_at_remind" />
+            <SwitchPreference
+                android:key="key_comment_remind"
+                android:title="@string/title_comment_remind" />
+            <SwitchPreference
+                android:key="key_private_msg_remind"
+                android:title="@string/title_private_msg_remind" />
+            <SwitchPreference
+                android:key="key_new_fans_remind"
+                android:title="@string/title_new_fans_remind" />
+        </PreferenceCategory>
+        <PreferenceCategory>
+            <ListPreference
+                android:defaultValue="0.5"
+                android:entries="@array/msg_pull_frequency"
+                android:entryValues="@array/msg_pull_frequency_value"
+                android:key="key_msg_pull_frequency"
+                android:title="@string/title_msg_pull_frequency" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/title_private" >
+        
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/title_common" >
+        <PreferenceCategory>
+            <ListPreference
+                android:defaultValue="true"
+                android:entries="@array/reading_mode"
+                android:entryValues="@array/reading_mode_value"
+                android:key="key_reading_mode"
+                android:title="@string/title_reading_mode" />
+            <ListPreference
+                android:defaultValue="medium"
+                android:entries="@array/font_size"
+                android:entryValues="@array/font_size_value"
+                android:key="key_font_size"
+                android:title="@string/title_font_size" />
+        </PreferenceCategory>
+        <PreferenceCategory>
+            <SwitchPreference
+                android:key="key_load_more"
+                android:summary="@string/summary_load_more"
+                android:title="@string/title_load_more" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+</PreferenceScreen>

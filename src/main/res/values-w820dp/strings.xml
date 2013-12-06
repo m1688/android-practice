@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">search</string>
+    <string name="search_button">search_button</string>
+    <string name="searchbox_tip">input keyword</string>
+    <string name="no_search_result">no result, please try another try!</string>
+</resources>
